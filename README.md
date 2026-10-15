@@ -1,37 +1,108 @@
-# BUY NEST — Phase 1 Landing Page
+# BUY NEST — E-Commerce Website
 
-A Next.js App Router + TypeScript + Tailwind CSS v4 + Lucide React starter. Product records and category images are loaded from the live DummyJSON API on the server.
+Buy Nest is a responsive e-commerce website developed using Next.js, TypeScript, Tailwind CSS, and Lucide React.
 
-## Start
+The project demonstrates an end-to-end e-commerce shopping experience, including product browsing, user authentication screens, wishlist, shopping cart, checkout, shipping, order confirmation, and order history.
+
+## Tech Stack
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS v4
+- Lucide React
+- DummyJSON API
+- Git & GitHub
+
+## Features
+
+### Home Page
+- Responsive landing page
+- Featured products
+- Product categories
+- Navigation and product discovery
+
+### Products
+- Product listing page
+- Dynamic product detail pages
+- Category-based product browsing
+
+### User Account
+- Registration page
+- Login page
+- Account page
+
+### Shopping
+- Add products to cart
+- Manage cart items
+- Wishlist functionality
+- Checkout flow
+- Shipping details
+- Order confirmation
+- Order history
+
+## Project Routes
+
+| Route | Description |
+|---|---|
+| `/` | Home page |
+| `/products` | Product listing |
+| `/products/[id]` | Product details |
+| `/category/[slug]` | Category products |
+| `/login` | Login |
+| `/register` | Registration |
+| `/account` | User account |
+| `/cart` | Shopping cart |
+| `/wishlist` | Wishlist |
+| `/shipping` | Shipping details |
+| `/checkout` | Checkout |
+| `/order-success` | Order confirmation |
+| `/orders` | Order history |
+
+## Installation and Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/RamadeviSivakumar/-Buy-Nest.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd -- -Buy-Nest
+```
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000. The development server needs internet access to fetch DummyJSON products and serve remote product images.
+Open:
 
-## Files
+http://localhost:3000
 
-- `app/page.tsx` — Server Component landing page (one API fetch).
-- `app/loading.tsx` — loading skeleton.
-- `app/error.tsx` — Client Component error boundary and retry.
-- `components/Header.tsx` — responsive navigation with native mobile `<details>` menu.
-- `components/Hero.tsx` — dynamic hero collage.
-- `components/CategoryCard.tsx` — category links derived from the fetched products.
-- `components/ProductCard.tsx` — featured product card.
-- `components/Footer.tsx` — footer.
-- `lib/products.ts` — fetch layer with 1-hour revalidation.
-- `lib/format.ts` — currency and category label formatting.
-- `types/product.ts` — TypeScript API model.
-- `next.config.ts` — allows optimized images from cdn.dummyjson.com.
+An internet connection is required for features that fetch live product data or remote images.
 
-## Scope (intentional)
+## E-Commerce User Flow
 
-This phase only creates the landing page. Links to `/products`, `/products/[id]`, `/login`, `/register`, `/cart` and `/wishlist` point to routes that will be built in later phases. They currently show 404; this is expected.
+Home → Product Listing → Product Details → Add to Cart → Login / Register → Shipping → Checkout → Order Success → Order History
 
-DummyJSON reports prices in USD, so the UI displays USD; do not add a rupee sign without a conversion or deliberate mock pricing.
+## Project Purpose
 
-## Next phase
+This project was developed as a practical assignment to understand full e-commerce website development, page navigation, user interactions, component-based architecture, and Git version control.
 
-Add registration and login forms. Then create a shared `/products` listing and dynamic `/products/[id]` detail page, plus cart, wishlist, checkout and shipping.
+## Deployment
+
+The source code is maintained on GitHub. Deployment is intentionally not included as part of the assignment.
+
+## Repository
+
+https://github.com/RamadeviSivakumar/-Buy-Nest
