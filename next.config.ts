@@ -1,19 +1,34 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    agentFeedback: true,
-  },
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
+  images: {
+    remotePatterns: [
+      // DummyJSON product images
+      {
+        protocol: "https",
+        hostname: "cdn.dummyjson.com",
+        pathname: "/product-images/**",
       },
-    },
+
+      // Unsplash product photos
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+
+      // Hoover appliance photos
+      {
+        protocol: "https",
+        hostname: "www.hoover-home.com",
+      },
+
+      // Wix product photos
+      {
+        protocol: "https",
+        hostname: "static.wixstatic.com",
+      },
+    ],
   },
 };
 

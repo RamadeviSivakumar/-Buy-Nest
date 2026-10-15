@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BUY NEST — Phase 1 Landing Page
 
-## Getting Started
+A Next.js App Router + TypeScript + Tailwind CSS v4 + Lucide React starter. Product records and category images are loaded from the live DummyJSON API on the server.
 
-First, run the development server:
+## Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. The development server needs internet access to fetch DummyJSON products and serve remote product images.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Files
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/page.tsx` — Server Component landing page (one API fetch).
+- `app/loading.tsx` — loading skeleton.
+- `app/error.tsx` — Client Component error boundary and retry.
+- `components/Header.tsx` — responsive navigation with native mobile `<details>` menu.
+- `components/Hero.tsx` — dynamic hero collage.
+- `components/CategoryCard.tsx` — category links derived from the fetched products.
+- `components/ProductCard.tsx` — featured product card.
+- `components/Footer.tsx` — footer.
+- `lib/products.ts` — fetch layer with 1-hour revalidation.
+- `lib/format.ts` — currency and category label formatting.
+- `types/product.ts` — TypeScript API model.
+- `next.config.ts` — allows optimized images from cdn.dummyjson.com.
 
-## Learn More
+## Scope (intentional)
 
-To learn more about Next.js, take a look at the following resources:
+This phase only creates the landing page. Links to `/products`, `/products/[id]`, `/login`, `/register`, `/cart` and `/wishlist` point to routes that will be built in later phases. They currently show 404; this is expected.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+DummyJSON reports prices in USD, so the UI displays USD; do not add a rupee sign without a conversion or deliberate mock pricing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Next phase
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add registration and login forms. Then create a shared `/products` listing and dynamic `/products/[id]` detail page, plus cart, wishlist, checkout and shipping.

@@ -1,0 +1,40 @@
+/* Styles used by all 16 dedicated BUY NEST category routes. */
+.bn-category-page .bn-main-nav-inner .bn-nav-links a { color:#51615b; font-weight:700; font-size:11px; }
+.bn-category-page .bn-main-nav-inner .bn-nav-links a:hover { color:#285b42; }
+.bn-category-page .bn-sidebar-promo a { color:#2f6445; border-bottom:1px solid #486d55; display:inline-block; margin-top:12px; position:relative; z-index:1; font-weight:800; font-size:11px; }
+.bn-category-page .bn-sidebar-links a { text-decoration:none; }
+.bn-category-page .bn-category-link>span:nth-child(2) { flex:1; }
+.bn-category-page .bn-category-link>span:last-child { opacity:.6; font-size:18px; }
+.bn-category-page .bn-crumb a { color:#839187; }
+.bn-category-page .bn-category-hero { min-height:260px; border-radius:17px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:space-between; padding:42px 52px; isolation:isolate; border:1px solid #e9eee8; }
+.bn-category-page .bn-category-hero-info { position:relative; z-index:2; max-width:540px; }
+.bn-category-page .bn-category-hero h1 { font-size:clamp(32px,3.4vw,50px); line-height:1.1; margin:14px 0; letter-spacing:-2px; color:#203b32; }
+.bn-category-page .bn-category-hero p { color:#6b7e73; line-height:1.85; max-width:440px; font-size:12px; }
+.bn-category-page .bn-category-result-pill { display:inline-flex; margin-top:19px; font-size:10px; color:#35604b; font-weight:800; padding:8px 12px; background:#ffffffa8; border:1px solid #ffffffba; border-radius:99px; }
+.bn-category-page .bn-category-hero-emoji { width:185px; height:185px; border-radius:44px; display:grid; place-items:center; font-size:102px; box-shadow:0 22px 42px #19362414; transform:rotate(-9deg); z-index:1; margin-right:45px; flex-shrink:0; }
+.bn-category-page .bn-category-decoration { position:absolute; bottom:-28px; right:-20px; font-family:Manrope,sans-serif; font-size:90px; font-weight:900; color:#ffffff75; white-space:nowrap; letter-spacing:-8px; user-select:none; }
+.bn-category-page .bn-category-offer { margin-top:20px; background:#224838; color:white; min-height:84px; border-radius:11px; display:flex; align-items:center; padding:18px 25px; gap:17px; }
+.bn-category-page .bn-offer-star { background:#ffffff16; display:grid; place-items:center; width:40px; height:40px; border-radius:50%; font-size:24px; flex-shrink:0; }
+.bn-category-page .bn-category-offer div { flex:1; }
+.bn-category-page .bn-category-offer strong { font-size:13px; }
+.bn-category-page .bn-category-offer p { font-size:10px; color:#c8d9cb; margin-top:5px; }
+.bn-category-page .bn-category-offer button { color:#244938; font-size:11px; font-weight:800; background:#edf3e0; border:0; border-radius:7px; padding:13px 17px; display:flex; gap:18px; white-space:nowrap; }
+.bn-category-page .bn-category-list { margin-top:45px; }
+.bn-category-page .bn-category-bottom-link { background:#285842; color:#fff; display:inline-flex; border-radius:6px; padding:11px 16px; font-weight:800; font-size:11px; margin-top:20px; }
+.bn-missing-category { min-height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; gap:14px; text-align:center; }
+.bn-missing-illustration { font-size:65px; }
+.bn-missing-category h1 { font-size:31px; }
+.bn-missing-category p { color:#718a76; }
+.bn-missing-category a { background:#285842; color:#fff; padding:13px 20px; border-radius:9px; margin-top:12px; }
+@media(max-width:1080px){.bn-category-page .bn-category-hero{padding:30px}.bn-category-page .bn-category-hero-emoji{height:140px;width:140px;font-size:76px;margin-right:14px}}
+@media(max-width:760px){.bn-category-page .bn-category-hero{padding:27px 22px;min-height:230px}.bn-category-page .bn-category-hero-info{max-width:75%}.bn-category-page .bn-category-hero h1{font-size:28px;letter-spacing:-1.2px}.bn-category-page .bn-category-hero p{font-size:10px}.bn-category-page .bn-category-hero-emoji{position:absolute;right:-18px;top:20px;margin:0;height:115px;width:115px;font-size:65px;opacity:.8}.bn-category-page .bn-category-result-pill{margin-top:12px}.bn-category-page .bn-category-decoration{font-size:52px;bottom:-16px}.bn-category-page .bn-category-offer{padding:15px;gap:10px;flex-wrap:wrap}.bn-category-page .bn-category-offer div{flex-basis:calc(100% - 50px)}.bn-category-page .bn-category-offer button{margin-left:50px}.bn-category-page .bn-category-list{margin-top:27px}}
+
+/* Department hero imagery and subcategory product filters. */
+.bn-category-page .bn-category-hero-visual{width:245px;height:210px;overflow:hidden;transform:rotate(-5deg);border-radius:24px;box-shadow:0 23px 45px #102a2e26;position:relative;z-index:2;flex-shrink:0;background:#fff}
+.bn-category-page .bn-category-hero-visual img{width:100%;height:100%;object-fit:cover}
+.bn-category-page .bn-subcategory-filter{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:27px}
+.bn-category-page .bn-subcategory-filter button{background:white;border:1px solid #e2eae2;padding:10px 15px;border-radius:99px;color:#54705e;font-size:11px;font-weight:700;transition:background .15s}
+.bn-category-page .bn-subcategory-filter button:hover{background:#f1f5ef}
+.bn-category-page .bn-subcategory-filter button.active{background:#264b3a;border-color:#264b3a;color:white}
+.bn-category-page .bn-category-list{margin-top:33px}
+@media(max-width:760px){.bn-category-page .bn-category-hero-visual{position:absolute;right:-36px;top:49px;width:118px;height:142px;opacity:.86}.bn-category-page .bn-subcategory-filter{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.bn-category-page .bn-subcategory-filter button{white-space:nowrap}}
