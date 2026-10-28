@@ -1,6 +1,8 @@
 
 "use client";
 
+import { withAvailableStock } from "@/lib/inventory";
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -40,6 +42,7 @@ export type ProductDetail = {
   discountPercentage: number;
   rating: number;
   stock: number;
+  inventoryBaseStock?: number;
   brand?: string;
   sku?: string;
   thumbnail: string;
@@ -57,6 +60,7 @@ type CartItem = {
   price: number;
   thumbnail: string;
   stock: number;
+  inventoryBaseStock?: number;
   quantity: number;
 };
 
@@ -174,6 +178,7 @@ function addProductToCart(
   product: ProductDetail,
   requestedQuantity: number
 ) {
+  product = withAvailableStock(product);
   if (product.stock <= 0) {
     throw new Error("Product is out of stock.");
   }
@@ -192,6 +197,7 @@ function addProductToCart(
     price: product.price,
     thumbnail: product.thumbnail,
     stock: product.stock,
+    inventoryBaseStock: product.inventoryBaseStock,
     quantity,
   };
 
@@ -295,10 +301,21 @@ function formatPrice(price: number) {
 // ============================================
 
 export default function ProductDetailClient({
-  product,
+  product: initialProduct,
 }: {
   product: ProductDetail;
 }) {
+  const [product, setProduct] = useState(initialProduct);
+  useEffect(() => {
+    const refresh = () => setProduct(withAvailableStock(initialProduct));
+    refresh();
+    window.addEventListener("storage", refresh);
+    window.addEventListener("buynest-cart-updated", refresh);
+    return () => {
+      window.removeEventListener("storage", refresh);
+      window.removeEventListener("buynest-cart-updated", refresh);
+    };
+  }, [initialProduct]);
   const router = useRouter();
 
   const [quantity, setQuantity] = useState(1);

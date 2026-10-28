@@ -1,6 +1,8 @@
 
 "use client";
 
+import { withAvailableStock } from "@/lib/inventory";
+
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { useRouter } from "next/navigation";
@@ -153,7 +155,7 @@ function readCart(): CartItem[] {
         Number.isInteger(product.quantity) &&
         product.quantity > 0
       );
-    });
+    }).map(withAvailableStock);
   } catch {
     return [];
   }

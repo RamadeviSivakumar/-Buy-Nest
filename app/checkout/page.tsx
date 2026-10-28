@@ -1,6 +1,8 @@
 
 "use client";
 
+import { withAvailableStock } from "@/lib/inventory";
+
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -183,7 +185,7 @@ function readCart(): CartItem[] {
           product.quantity > 0
         );
       }
-    );
+    ).map(withAvailableStock);
   } catch {
     return [];
   }

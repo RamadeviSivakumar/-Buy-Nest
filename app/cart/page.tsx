@@ -1,6 +1,8 @@
 
 "use client";
 
+import { withAvailableStock } from "@/lib/inventory";
+
 import {
   useEffect,
   useMemo,
@@ -169,7 +171,7 @@ function parseCart(raw: string): CartItem[] {
           item.quantity > 0
         );
       }
-    );
+    ).map(withAvailableStock);
   } catch {
     return [];
   }
