@@ -26,7 +26,7 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
-
+import InstallButton from "@/app/install-button";
 // ============================================
 // TYPES
 // ============================================
@@ -314,6 +314,7 @@ export default function Header() {
             >
               <PackageCheck size={23} />
             </Link>
+            <InstallButton />
 
             {/* VERTICAL DIVIDER */}
 
