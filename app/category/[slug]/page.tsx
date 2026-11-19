@@ -22,9 +22,8 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-import ProductCard, {
-  type Product,
-} from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
+import type { Product } from "@/types/product";
 
 import {
   demoProducts,
