@@ -403,6 +403,7 @@ export default function Header() {
             >
               <ShoppingBag size={23} />
             </Link>
+            <InstallButton />
 
             {/* MOBILE MENU BUTTON */}
 

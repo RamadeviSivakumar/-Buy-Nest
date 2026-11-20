@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { SerwistProvider } from "./serwist-provider";
 import "./globals.css";
 
+
 export const metadata: Metadata = {
   title: "BUY NEST | Discover Your Next Favorite",
   description:
